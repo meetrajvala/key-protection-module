@@ -74,7 +74,7 @@ steps:
 
   - name: "alpine"
     id: "PrepareOEMInstallDir"
-    entrypoint: "bash"
+    entrypoint: "sh"
     args:
       - -c
       - |
@@ -174,9 +174,6 @@ steps:
           "s|cros_efi|cros_efi systemd.mask=cloud-init-local.service|g"
           "s|cros_efi|cros_efi systemd.mask=cloud-config.service|g"
           "s|cros_efi|cros_efi systemd.mask=cloud-final.service|g"
-          "s|cros_efi|cros_efi systemd.mask=get-cloud-api-domains.service|g"
-          "s|cros_efi|cros_efi systemd.mask=google-guest-agent-manager.service|g"
-          "s|cros_efi|cros_efi systemd.mask=google-guest-compat-manager.service|g"
           "s|cros_efi|cros_efi systemd.mask=var-lib-docker.mount|g"
           "s|cros_efi|cros_efi systemd.mask=docker.service|g"
           "s|cros_efi|cros_efi systemd.mask=google-guest-agent.service|g"
